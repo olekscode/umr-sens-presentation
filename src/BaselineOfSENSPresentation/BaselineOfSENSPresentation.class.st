@@ -15,10 +15,18 @@ BaselineOfSENSPresentation >> baseline: spec [
 			specForPackages: spec ].
 ]
 
+{ #category : #'as yet unclassified' }
+BaselineOfSENSPresentation >> loadBackgroundImage [
+	"Load UMR SENS logo as background image"
+
+	(SENSGitBridge imagesPath / 'sens-logo.png') ifExists: [ :file |
+		PolymorphSystemSettings desktopLogoFileName: file fullName ].
+]
+
 { #category : #script }
 BaselineOfSENSPresentation >> postLoad [
 
-	"do something"
+	self loadBackgroundImage.
 ]
 
 { #category : #'as yet unclassified' }
