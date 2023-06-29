@@ -3,7 +3,7 @@ Presenting UMR SENS using Pharo
 
 ```st
 Metacello new
-    repository: 'git@github.com:olekscode/umr-sens-presentation.git';
+    repository: 'github://olekscode/umr-sens-presentations/src';
     baseline: 'SENSPresentation';
     load.
 ```
