@@ -7,11 +7,34 @@ Class {
 { #category : #baselines }
 BaselineOfSENSPresentation >> baseline: spec [
 	<baseline>
+	spec for: #common do: [
+		spec postLoadDoIt: #postLoad.
+		
+		self 
+			specForBaselines: spec;
+			specForPackages: spec ].
+]
+
+{ #category : #script }
+BaselineOfSENSPresentation >> postLoad [
+
+	"do something"
+]
+
+{ #category : #'as yet unclassified' }
+BaselineOfSENSPresentation >> specForBaselines: spec [
+
 	spec
-		for: #common
-		do: [
-			"Packages"
-			spec
-				package: 'SENS-Presentation';
-				package: 'SENS-Presentation-Tests' with: [ spec requires: #('SENS-Presentation') ] ]
+		baseline: 'GitBridge'
+		with: [ spec repository: 'github://jecisc/GitBridge/src' ].
+
+]
+
+{ #category : #'as yet unclassified' }
+BaselineOfSENSPresentation >> specForPackages: spec [
+
+	spec
+		package: 'SENS-Presentation';
+		package: 'SENS-Presentation-Tests' with: [ spec requires: #('SENS-Presentation') ]
+
 ]
