@@ -1,0 +1,16 @@
+[
+  {
+    "First name": "Pierre",
+    "Last Name": "Bommel",
+    "Email": "bommel@cirad.fr",
+    "Nationalities": [ "France" ],
+    "Institute": "CIRAD"
+  },
+  {
+    "First name": "Oleksandr",
+    "Last Name": "Zaitsev",
+    "Email": "oleksandr.zaitsev@cirad.fr",
+    "Nationalities": [ "Ukraine" ],
+    "Institute": "CIRAD"
+  }
+]
