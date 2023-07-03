@@ -1,0 +1,73 @@
+Last Name,First Name,Sex,Year of Birth,Grade,Field,Subfield,Primary Axis,Secondary Axis,Afrique,Latin America,South-East Asia,Madagascar and Indian Ocean,Pacific,France/Europe,Maghreb,IRD,CIRAD,UPVM,Other,HDR
+ANTONA,Martine,Female,1960,Cadre_supérieur,SHS,SHS1_1 Économie,2.0,3.0,False,False,False,False,False,False,False,False,True,False,False,False
+AUBERT,Sigrid,Female,1970,Cadre_supérieur,SHS,SHS2_1 Droit,1.0,,True,False,False,True,False,True,False,False,True,False,False,True
+BABADZAN,Alain,Male,1953,Emérite,SHS,SHS2_3 Anthropologie et ethnologie,1.0,,False,False,False,False,False,False,False,False,False,True,False,True
+BAZILE,Didier,Male,1968,Cadre_supérieur,SHS,SHS3_1 Géographie,1.0,3.0,False,True,False,True,False,True,True,False,True,False,False,True
+BLANCO,Julien,Male,1987,CRCN,SVE,"SVE1_2 Évolution, écologie, biologie des populations",1.0,4.0,False,False,False,True,False,False,True,True,False,False,False,False
+BOMMEL,Pierre,Male,1966,Cadre_supérieur,ST,ST6 Sciences et technologies de l'information et de la communication,1.0,4.0,False,True,False,True,False,False,False,False,True,False,False,True
+BOTTA,Aurélie,Female,1972,Cadre_supérieur,ST,ST6 Sciences et technologies de l'information et de la communication,1.0,4.0,False,False,False,False,False,False,False,False,True,False,False,False
+BOUSQUET,François,Male,1963,Cadre_supérieur,SHS,"SHS2_4 Sociologie, démographie",1.0,2.0,True,False,False,False,False,False,False,False,True,False,False,True
+CARRIERE,Stéphanie,Female,1971,CRCN,SVE,"SVE1_2 Évolution, écologie, biologie des populations",1.0,3.0,True,False,False,True,False,False,False,True,False,False,False,True
+CASTELLA,Jean-Christophe,Male,1966,DR2,SHS,"SVE1_2 Évolution, écologie, biologie des populations",1.0,4.0,False,False,True,False,False,False,False,True,False,False,False,True
+CHANDIVERT,Arnauld,Male,1974,MCF,SHS,SHS2_3 Anthropologie et ethnologie,2.0,1.0,False,False,False,False,False,False,False,False,False,True,False,False
+CHEIKHE,Léna,Female,2000,NonCadre_EPIC,,,,,False,False,False,False,False,False,False,False,True,False,False,
+COLIN,Jean-Philippe,Male,1955,DR1,SHS,SHS1_1 Économie,3.0,,True,False,False,False,False,False,True,True,False,False,False,True
+COUDEL,Emilie,Female,1980,Cadre_confirmé,SHS,SHS1_1 Économie,1.0,3.0,False,True,False,False,False,False,False,False,True,False,False,False
+CRENN,Chantal,Female,1967,PR1,SHS,SHS2_3 Anthropologie et ethnologie,1.0,4.0,True,False,False,True,False,True,True,False,False,True,False,True
+CUE,Miriam,Female,1973,IR,SHS,D - Sciences Humaines et Sociales (SHS),2.0,4.0,False,False,False,False,False,True,False,True,False,False,False,False
+D'AQUINO,Patrick,Male,1964,Cadre_supérieur,SHS,SHS3_1 Géographie,2.0,4.0,True,False,True,False,False,False,False,False,True,False,False,True
+DARE,William's,Male,1971,Cadre_supérieur,SHS,"SHS2_4 Sociologie, démographie",2.0,4.0,True,False,False,False,False,False,False,False,True,False,False,False
+DAVID,Victor,Male,1965,CRCN,SHS,SHS2_1 Droit,2.0,,False,False,False,False,True,False,False,True,False,False,False,False
+DELAY,Etienne,Male,1985,Cadre_débutant,SHS,SHS3_1 Géographie,2.0,1.0,True,False,True,False,False,False,False,False,True,False,False,False
+DEMANGET,Magali,Female,1967,MCF,SHS,SHS2_3 Anthropologie et ethnologie,1.0,4.0,False,True,False,False,False,False,False,False,False,True,False,False
+DURAND,Marie-Hélène,Female,1957,CRCN,SHS,SHS1_1 Économie,1.0,,False,False,False,False,False,False,False,True,False,False,False,False
+DURAND-BESSART,Clémentine,Female,1994,Postdoc,SVE,,,,False,False,False,True,False,False,False,True,False,False,False,False
+FACHE,Elodie,Female,1983,CRCN,SHS,SHS2_3 Anthropologie et ethnologie,1.0,3.0,False,False,False,True,True,False,False,True,False,False,False,False
+FALLOT,Abigail,Female,1969,Cadre_supérieur,SHS,SHS1_1 Économie,1.0,3.0,True,False,False,False,False,False,False,False,True,False,False,False
+FILOCHE,Geoffroy,Male,1976,CRCN,SHS,SHS2_1 Droit,3.0,2.0,False,True,False,False,False,False,False,True,False,False,False,False
+FINOT,Nathalie,Female,1963,IE,J,J - Gestion et pilotage (GP),,,False,False,False,False,False,False,False,True,False,False,False,False
+FORMOSO,Bernard,Male,1957,PR1,SHS,SHS2_3 Anthropologie et ethnologie,4.0,1.0,False,False,True,False,False,False,False,False,False,True,False,True
+GAIDET-DRAPIER ,Nicolas,Male,1974,Cadre_supérieur,SVE,"SVE1_2 Évolution, écologie, biologie des populations",1.0,2.0,False,False,False,True,False,False,False,False,True,False,False,True
+GAUDIN,Alexandre,Male,,,,,,,False,True,True,False,False,True,True,False,False,False,True,False
+GERARD,Françoise,Female,1963,Cadre_supérieur,SHS,SHS1_1 Économie,2.0,1.0,True,False,False,False,False,False,False,False,True,False,False,True
+GERAUD,Marie-Odile,Female,1965,MCF,SHS,SHS2_3 Anthropologie et ethnologie,1.0,,False,True,False,False,False,False,False,False,False,True,False,False
+HERVE,Dominique,Male,1955,CRCN,SVE,"SVE1_3 Biotechnologies, sciences environnementales, biologie synthétique, agronomie",4.0,1.0,False,False,False,True,False,False,False,True,False,False,False,False
+JANKOWSKI ,Frédérique,Female,1976,Cadre_confirmé,SHS,SHS2_3 Anthropologie et ethnologie,4.0,1.0,True,True,False,False,False,False,False,False,True,False,False,False
+JEBBAR,Ecram,Female,,TCH,J,J - Gestion et pilotage (GP),,,False,False,False,False,False,False,False,True,False,False,False,False
+KARPE,Philippe,Male,1968,Cadre_supérieur,SHS,SHS2_1 Droit,2.0,3.0,True,True,True,False,False,False,False,False,True,False,False,True
+KARSENTY ,Alain,Male,1958,Cadre_supérieur,SHS,SHS1_1 Économie,3.0,,True,True,False,False,False,False,False,False,True,False,False,True
+LABEYRIE,Vanesse,Female,1985,Cadre_débutant,SVE,"SVE1_3 Biotechnologies, sciences environnementales, biologie synthétique, agronomie",1.0,,True,False,False,True,False,False,True,False,True,False,False,False
+LAVIGNE-DELVILLE,Philippe,Male,1962,DR2,SHS,SHS2_3 Anthropologie et ethnologie,3.0,4.0,True,False,False,False,False,False,False,True,False,False,False,True
+LE BARS,Marjorie,Female,1973,CRCN,ST,ST6_1 Informatique,4.0,,True,False,False,False,False,False,False,True,False,False,False,False
+LE GOUILL,Claude,Male,1982,CRCN,SHS,"SHS2_4 Sociologie, démographie",3.0,,False,True,False,False,False,False,False,True,False,False,False,False
+LE MEUR,Pierre-Yves,Male,1962,DR2,SHS,SHS2_3 Anthropologie et ethnologie,2.0,3.0,False,False,False,False,True,False,False,True,False,False,False,True
+LE PAGE,Christophe,Male,1966,Cadre_supérieur,SVE,"SVE2_LS8 Evolution, écologie, biologie des populations",1.0,4.0,True,True,False,False,False,False,False,False,True,False,False,True
+LECLERC,Grégoire,Male,1960,Cadre_supérieur,ST,ST6 Sciences et technologies de l'information et de la communication,1.0,4.0,False,True,False,False,False,False,False,False,True,False,False,False
+LEONARD,Eric,Male,1963,DR2,SHS,"SHS2_4 Sociologie, démographie",1.0,3.0,False,True,False,False,False,False,False,True,False,False,False,True
+MARIEL,Juliette,Female,1991,Post-doc,,,,,True,False,False,True,False,False,True,False,True,False,False,False
+MERAL,Philippe,Male,1968,DR2,SHS,SHS1_1 Économie,3.0,2.0,False,False,True,True,False,False,False,True,False,False,False,True
+MICHON,Geneviève,Female,1956,DREX,SHS,SHS3_1 Géographie,4.0,1.0,False,False,False,False,False,False,True,True,False,False,False,True
+MITATRE,Claire-Cécile,Female,1977,MCF,SHS,SHS2_3 Anthropologie et ethnologie,1.0,,True,False,False,False,False,False,True,False,False,True,False,False
+MOITY-MAIZI,Pascale,Female,1961,MC_AutMin,SHS,SHS2_3 Anthropologie et ethnologie,4.0,,False,True,False,False,False,True,False,False,False,False,True,True
+MOIZO,Bernard,Male,1954,Emérite,SHS,SHS2_3 Anthropologie et ethnologie,4.0,1.0,False,False,True,True,False,False,True,True,False,False,False,True
+MOLLARD,Eric,Male,1957,CRCN,SHS,SHS2_2 Science politique,2.0,,False,True,False,False,False,False,False,True,False,False,False,False
+MULLER,Jean-Pierre,Male,1960,Cadre_supérieur,ST,ST6 Sciences et technologies de l'information et de la communication,1.0,4.0,True,False,False,True,False,False,False,False,True,False,False,True
+ONGOLO,Symphorien,Male,1983,CRCN,SHS,SHS2_2 Science politique,3.0,,True,False,False,True,False,False,False,True,False,False,False,False
+PANDOLFI,Paul,Male,1951,Emérite,SHS,SHS2_3 Anthropologie et ethnologie,1.0,,False,False,False,False,False,False,False,False,False,True,False,True
+PIKETTY,Marie-Gabrielle,Female,1971,Cadre_supérieur,SHS,SHS1_1 Économie,3.0,1.0,False,True,False,False,False,False,False,False,True,False,False,False
+POTTIER,Auréa,Female,1990,IE,ST,ST6 Sciences et technologies de l'information et de la communication,,,False,False,False,False,False,False,False,True,False,False,False,False
+QUESTE,Jérôme,Male,1972,Cadre_supérieur,SHS,"SHS2_4 Sociologie, démographie",1.0,4.0,False,False,False,True,False,False,False,False,True,False,False,False
+RAFFAILLAC,Thibault,Male,1987,Post-doc / partenaire accueilli,ST,ST6 Sciences et technologies de l'information et de la communication,1.0,4.0,False,False,False,False,False,False,False,False,False,False,True,False
+RECALT,Christine,Female,1960,IE,SHS,D - Sciences Humaines et Sociales (SHS),1.0,4.0,False,True,False,False,False,False,False,True,False,False,False,False
+REQUIER-DESJARDINS,Mélanie,Female,1971,MC_AutMin,SHS,SHS1_1 Économie,3.0,1.0,False,False,False,False,False,False,False,False,False,False,True,True
+RODARY,Estienne,Male,1969,DR2,SHS,SHS3_1 Géographie,2.0,3.0,False,False,False,False,True,False,False,True,False,False,False,True
+ROVIS,Nathalie,Female,1966,NonCadre_EPIC,J,J - Gestion et pilotage (GP),,,False,False,False,False,False,False,False,False,True,False,False,False
+RUF,Thierry,Male,1957,Emérite,SHS,SHS3_1 Géographie,2.0,,False,False,False,False,False,False,True,True,False,False,False,False
+SAND,Christophe,Male,1966,Conserv en Chef,SHS,SHS6_3 Archéologie,1.0,,False,False,False,False,True,False,False,False,False,False,True,True
+SERPANTIE,Georges,Male,1958,CRCN,SVE,"SVE1_3 Biotechnologies, sciences environnementales, biologie synthétique, agronomie",1.0,4.0,True,False,False,True,False,False,False,True,False,False,False,False
+SOLER,Nathanëlle,Female,1981,Postdoc,SHS,SHS2_3 Anthropologie et ethnologie,,,False,False,False,False,True,False,False,True,False,False,False,False
+THERVILLE,Clara,Female,1986,CRCN,SHS,SHS3_1 Géographie,4.0,,True,False,False,False,False,True,False,True,False,False,False,False
+THOMAS,Frédéric,Male,1970,CRCN,SHS,SHS6_1 Histoire,2.0,3.0,False,False,True,False,False,False,False,True,False,False,False,False
+TOUSSAINT,Marie,Female,,Post-doc,,SHS2_3 Anthropologie et ethnologie,,,False,False,False,True,False,False,False,True,False,False,False,False
+VALONY,Marie-Jeanne,Female,1956,IE_AutMin,SVE,"SVE1_3 Biotechnologies, sciences environnementales, biologie synthétique, agronomie",1.0,4.0,False,False,False,False,False,True,True,False,False,False,True,False
+ZAITSEV,Oleksandr,Male,1996,Cadre_débutant,ST,ST6 Sciences et technologies de l'information et de la communication,1.0,4.0,True,True,False,False,False,False,False,False,True,False,False,False
