@@ -1,16 +1,139 @@
 [
   {
-    "First name": "Pierre",
-    "Last Name": "Bommel",
-    "Email": "bommel@cirad.fr",
-    "Nationalities": [ "France" ],
+    "First Name": "Martine",
+    "Last Name": "Antona",
+    "Email": "",
+    "Nationalities": [ ],
+    "Terrains": [ ],
     "Institute": "CIRAD"
   },
   {
-    "First name": "Oleksandr",
+    "First Name": "Sigrid",
+    "Last Name": "Aubert",
+    "Email": "",
+    "Nationalities": [ ],
+    "Terrains": [
+      "Africa",
+      "Madagascar and Indian Ocean",
+      "France/Europe" ],
+    "Institute": "CIRAD"
+  },
+  {
+    "First Name": "Alain",
+    "Last Name": "Babadzan",
+    "Email": "",
+    "Nationalities": [ ],
+    "Terrains": [ ],
+    "Institute": "UPVM"
+  },
+  {
+    "First Name": "Didier",
+    "Last Name": "Bazile",
+    "Email": "",
+    "Nationalities": [ ],
+    "Terrains": [ 
+      "Latin America",
+      "Madagascar and Indian Ocean",
+      "France/Europe",
+      "Maghreb" ],
+    "Institute": "CIRAD"
+  },
+  {
+    "First Name": "Julien",
+    "Last Name": "Blanco",
+    "Email": "",
+    "Nationalities": [ ],
+    "Terrains": [
+      "Madagascar and Indian Ocean",
+      "Maghreb" ],
+    "Institute": "IRD"
+  },
+  {
+    "First Name": "Pierre",
+    "Last Name": "Bommel",
+    "Email": "bommel@cirad.fr",
+    "Nationalities": [ "France" ],
+    "Terrains": [ 
+      "Latin America",
+      "Madagascar and Indian Ocean" ],
+    "Institute": "CIRAD"
+  },
+  {
+    "First Name": "Aurelie",
+    "Last Name": "Botta",
+    "Email": "",
+    "Nationalities": [ ],
+    "Terrains": [ ],
+    "Institute": "CIRAD"
+  },
+  {
+    "First Name": "François",
+    "Last Name": "Bousquet",
+    "Email": "",
+    "Nationalities": [ ],
+    "Terrains": [ "Africa" ],
+    "Institute": "CIRAD"
+  },
+  {
+    "First Name": "Stéphanie",
+    "Last Name": "Carriere",
+    "Email": "",
+    "Nationalities": [ ],
+    "Terrains": [
+      "Africa",
+      "Madagascar and Indian Ocean" ],
+    "Institute": "IRD"
+  },
+  {
+    "First Name": "Jean-Christophe",
+    "Last Name": "Castella",
+    "Email": "",
+    "Nationalities": [ ],
+    "Terrains": [ "South-East Asia" ],
+    "Institute": "IRD"
+  },
+  {
+    "First Name": "Arnauld",
+    "Last Name": "Chandivert",
+    "Email": "",
+    "Nationalities": [ ],
+    "Terrains": [ ],
+    "Institute": "UPVM"
+  },
+  {
+    "First Name": "Lena",
+    "Last Name": "Cheikhe",
+    "Email": "",
+    "Nationalities": [ ],
+    "Terrains": [ ],
+    "Institute": "CIRAD"
+  },
+  {
+    "First Name": "Jean-Philippe",
+    "Last Name": "Colin",
+    "Email": "",
+    "Nationalities": [ ],
+    "Terrains": [
+      "Africa",
+      "Maghreb" ],
+    "Institute": "IRD"
+  },
+  {
+    "First Name": "Emilie",
+    "Last Name": "Coudel",
+    "Email": "",
+    "Nationalities": [ ],
+    "Terrains": [ "Latin America" ],
+    "Institute": "CIRAD"
+  },
+  {
+    "First Name": "Oleksandr",
     "Last Name": "Zaitsev",
     "Email": "oleksandr.zaitsev@cirad.fr",
     "Nationalities": [ "Ukraine" ],
+    "Terrains": [
+      "Africa",
+      "Latin America" ],
     "Institute": "CIRAD"
   }
 ]
