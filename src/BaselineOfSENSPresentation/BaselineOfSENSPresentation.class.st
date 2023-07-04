@@ -35,6 +35,10 @@ BaselineOfSENSPresentation >> specForBaselines: spec [
 	spec
 		baseline: 'GitBridge'
 		with: [ spec repository: 'github://jecisc/GitBridge/src' ].
+		
+	spec
+		baseline: 'DataFrame'
+		with: [ spec repository: 'github://PolyMathOrg/DataFrame/src' ].
 
 ]
 
@@ -42,7 +46,7 @@ BaselineOfSENSPresentation >> specForBaselines: spec [
 BaselineOfSENSPresentation >> specForPackages: spec [
 
 	spec
-		package: 'SENS-Presentation';
+		package: 'SENS-Presentation' with: [ spec requires: #('GitBridge' 'DataFrame') ];
 		package: 'SENS-Presentation-Tests' with: [ spec requires: #('SENS-Presentation') ]
 
 ]
