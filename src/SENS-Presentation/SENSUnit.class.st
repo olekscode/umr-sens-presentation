@@ -104,7 +104,9 @@ SENSUnit >> initialize [
 	terrains do: [ :each | each researchUnit: self ].
 	
 	"This must appear after projects, terrains, etc. are loaded"
-	members := self loadMembers.
+	members := OrderedCollection new.
+	members addAll: self loadMembers.
+	members addAll: self loadPhdStudents.
 ]
 
 { #category : #inspector }
@@ -148,6 +150,7 @@ SENSUnit >> isSupportStaffInData: aRow [
 SENSUnit >> loadMembers [
 
 	| file df |
+	
 	file := SENSGitBridge dataPath / 'members.csv'.
 	df := DataFrame readFromCsv: file.
 	
@@ -155,6 +158,40 @@ SENSUnit >> loadMembers [
 		(self isSupportStaffInData: row)
 			ifTrue: [ self loadStaffMemberFromRow: row ]
 			ifFalse: [ self loadResearcherFromRow: row ] ].
+]
+
+{ #category : #loading }
+SENSUnit >> loadPhdStudentFromRow: row [
+	
+	| student theirTerrains theirInstitute |
+	
+	theirInstitute := institutes
+		detect: [ :institute | row at: institute name ]
+		ifNone: [ nil ].
+		
+	theirTerrains := terrains select: [ :terrain | row at: terrain name ].
+		
+	student := SENSPhdStudent new
+		firstName: (row at: 'First Name');
+		lastName: (row at: 'Last Name');
+		institute: theirInstitute;
+		terrains: theirTerrains;
+		yourself.
+			
+	theirTerrains do: [ :terrain | terrain members add: student ].
+	theirInstitute ifNotNil: [ theirInstitute members add: student ].
+	
+	^ student
+]
+
+{ #category : #loading }
+SENSUnit >> loadPhdStudents [
+
+	| file df |
+	file := SENSGitBridge dataPath / 'phd.csv'.
+	df := DataFrame readFromCsv: file.
+	
+	^ df rows collect: [ :row | self loadPhdStudentFromRow: row ]
 ]
 
 { #category : #loading }
