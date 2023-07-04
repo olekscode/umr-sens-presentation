@@ -160,29 +160,44 @@ SENSUnit >> loadMembers [
 { #category : #loading }
 SENSUnit >> loadResearcherFromRow: row [
 	
-	| researcher theirTerrains |
+	| researcher theirTerrains theirInstitute |
 	
+	theirInstitute := institutes
+		detect: [ :institute | row at: institute name ]
+		ifNone: [ nil ].
+		
 	theirTerrains := terrains select: [ :terrain | row at: terrain name ].
 		
 	researcher := SENSResearcher new
 		firstName: (row at: 'First Name');
 		lastName: (row at: 'Last Name');
-		institute: (#(CIRAD IRD UPVM) detect: [ :each | row at: each ] ifNone: [ nil ]);
+		institute: theirInstitute;
 		terrains: theirTerrains;
 		yourself.
 			
 	theirTerrains do: [ :terrain | terrain members add: researcher ].
+	theirInstitute ifNotNil: [ theirInstitute members add: researcher ].
+	
 	^ researcher
 ]
 
 { #category : #loading }
 SENSUnit >> loadStaffMemberFromRow: row [
 
-	^ SENSSupportStaff new
+	| member theirInstitute |
+
+	theirInstitute := institutes
+		detect: [ :institute | row at: institute name ]
+		ifNone: [ nil ].
+
+	member := SENSSupportStaff new
 		firstName: (row at: 'First Name');
 		lastName: (row at: 'Last Name');
-		institute: (#(CIRAD IRD UPVM) detect: [ :each | row at: each ] ifNone: [ nil ]);
-		yourself
+		institute: theirInstitute;
+		yourself.
+		
+	theirInstitute members add: member.
+	^ member
 ]
 
 { #category : #accessing }

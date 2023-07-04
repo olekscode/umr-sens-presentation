@@ -3,9 +3,7 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'name',
-		'researchers',
-		'students',
-		'supportStaff'
+		'members'
 	],
 	#category : #'SENS-Presentation-Model'
 }
@@ -22,10 +20,13 @@ SENSInstitute class >> named: aString [
 SENSInstitute >> initialize [
 
 	super initialize.
-	
-	researchers := OrderedCollection new.
-	students := OrderedCollection new.
-	supportStaff := OrderedCollection new.
+	members := OrderedCollection new.
+]
+
+{ #category : #accessing }
+SENSInstitute >> members [
+
+	^ members
 ]
 
 { #category : #accessing }
@@ -49,17 +50,17 @@ SENSInstitute >> printOn: aStream [
 { #category : #accessing }
 SENSInstitute >> researchers [
 
-	^ researchers
+	^ members select: [ :each | each isResearcher ]
 ]
 
 { #category : #accessing }
 SENSInstitute >> students [
 
-	^ students
+	^ members select: [ :each | each isPhdStudent ]
 ]
 
 { #category : #accessing }
 SENSInstitute >> supportStaff [
 
-	^ supportStaff
+	^ members select: [ :each | each isSupportStaff ]
 ]

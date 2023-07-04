@@ -18,11 +18,25 @@ SENSTerrain class >> named: aString [
 		yourself.
 ]
 
+{ #category : #accessing }
+SENSTerrain >> ciradResearchers [
+
+	^ self researchers select: [ :each |
+		each institute isNotNil and: [ each institute name = 'CIRAD' ] ]
+]
+
 { #category : #initialization }
 SENSTerrain >> initialize [
 
 	super initialize.
 	members := OrderedCollection new.
+]
+
+{ #category : #accessing }
+SENSTerrain >> irdResearchers [
+
+	^ self researchers select: [ :each |
+		each institute isNotNil and: [ each institute name = 'IRD' ] ]
 ]
 
 { #category : #accessing }
@@ -83,4 +97,11 @@ SENSTerrain >> svgPath [
 SENSTerrain >> svgPath: anObject [
 
 	svgPath := anObject
+]
+
+{ #category : #accessing }
+SENSTerrain >> upvmResearchers [
+
+	^ self researchers select: [ :each |
+		each institute isNotNil and: [ each institute name = 'UPVM' ] ]
 ]
