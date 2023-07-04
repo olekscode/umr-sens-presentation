@@ -82,35 +82,6 @@ SENSUnit class >> defaultThemes [
 	} collect: [ :each | SENSTheme titled: each ].
 ]
 
-{ #category : #defaults }
-SENSUnit class >> loadMembers [
-
-	| file df supportStaffCondition supportStaff researchers |
-	file := SENSGitBridge dataPath / 'members.csv'.
-	df := DataFrame readFromCsv: file.
-	
-	supportStaffCondition := [ :row |
-		((row at: 'Field') = 'J') or: [
-			(row at: 'Grade') isNotNil and: [
-				(row at: 'Grade') beginsWith: 'NonCadre' ] ] ].
-	
-	supportStaff := (df select: supportStaffCondition) rows collect: [ :row |
-		SENSSupportStaff new
-			firstName: (row at: 'First Name');
-			lastName: (row at: 'Last Name');
-			institute: (#(CIRAD IRD UPVM) detect: [ :each | row at: each ] ifNone: [ nil ]);
-			yourself ].
-		
-	researchers := (df reject: supportStaffCondition) rows collect: [ :row |
-		SENSResearcher new
-			firstName: (row at: 'First Name');
-			lastName: (row at: 'Last Name');
-			institute: (#(CIRAD IRD UPVM) detect: [ :each | row at: each ] ifNone: [ nil ]);
-			yourself ].
-		
-	^ supportStaff, researchers
-]
-
 { #category : #'as yet unclassified' }
 SENSUnit class >> openWorldMap [
 	<script>
@@ -129,7 +100,9 @@ SENSUnit >> initialize [
 	projects := self class defaultProjects.
 	themes := self class defaultThemes.
 	terrains := self class defaultTerrains.
-	members := self class loadMembers.
+	
+	"This must appear after projects, terrains, etc. are loaded"
+	members := self loadMembers.
 ]
 
 { #category : #inspector }
@@ -158,6 +131,56 @@ SENSUnit >> inspectorThemesContext: aContext [
 SENSUnit >> institutes [
 
 	^ institutes
+]
+
+{ #category : #loading }
+SENSUnit >> isSupportStaffInData: aRow [
+	"A helper method that defines a condition to check if the reow of data represents a team member who is a support staff"
+
+	^ ((aRow at: 'Field') = 'J') or: [
+			(aRow at: 'Grade') isNotNil and: [
+				(aRow at: 'Grade') beginsWith: 'NonCadre' ] ]
+]
+
+{ #category : #loading }
+SENSUnit >> loadMembers [
+
+	| file df |
+	file := SENSGitBridge dataPath / 'members.csv'.
+	df := DataFrame readFromCsv: file.
+	
+	^ df rows collect: [ :row |
+		(self isSupportStaffInData: row)
+			ifTrue: [ self loadStaffMemberFromRow: row ]
+			ifFalse: [ self loadResearcherFromRow: row ] ].
+]
+
+{ #category : #loading }
+SENSUnit >> loadResearcherFromRow: row [
+	
+	| researcher theirTerrains |
+	
+	theirTerrains := terrains select: [ :terrain | row at: terrain name ].
+		
+	researcher := SENSResearcher new
+		firstName: (row at: 'First Name');
+		lastName: (row at: 'Last Name');
+		institute: (#(CIRAD IRD UPVM) detect: [ :each | row at: each ] ifNone: [ nil ]);
+		terrains: theirTerrains;
+		yourself.
+			
+	theirTerrains do: [ :terrain | terrain members add: researcher ].
+	^ researcher
+]
+
+{ #category : #loading }
+SENSUnit >> loadStaffMemberFromRow: row [
+
+	^ SENSSupportStaff new
+		firstName: (row at: 'First Name');
+		lastName: (row at: 'Last Name');
+		institute: (#(CIRAD IRD UPVM) detect: [ :each | row at: each ] ifNone: [ nil ]);
+		yourself
 ]
 
 { #category : #accessing }

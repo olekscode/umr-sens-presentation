@@ -1,6 +1,9 @@
 Class {
 	#name : #SENSPhdStudent,
 	#superclass : #SENSMember,
+	#instVars : [
+		'terrains'
+	],
 	#category : #'SENS-Presentation-Model'
 }
 
@@ -8,4 +11,16 @@ Class {
 SENSPhdStudent >> isPhdStudent [
 
 	^ true
+]
+
+{ #category : #accessing }
+SENSPhdStudent >> terrains [
+
+	^ terrains
+]
+
+{ #category : #accessing }
+SENSPhdStudent >> terrains: anObject [
+
+	terrains := anObject
 ]

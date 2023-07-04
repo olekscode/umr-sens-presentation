@@ -4,8 +4,7 @@ Class {
 	#instVars : [
 		'name',
 		'svgPath',
-		'researchers',
-		'students'
+		'members'
 	],
 	#category : #'SENS-Presentation-Model'
 }
@@ -22,9 +21,13 @@ SENSTerrain class >> named: aString [
 SENSTerrain >> initialize [
 
 	super initialize.
-	
-	researchers := OrderedCollection new.
-	students := OrderedCollection new.
+	members := OrderedCollection new.
+]
+
+{ #category : #accessing }
+SENSTerrain >> members [
+
+	^ members
 ]
 
 { #category : #accessing }
@@ -48,13 +51,13 @@ SENSTerrain >> printOn: aStream [
 { #category : #accessing }
 SENSTerrain >> researchers [
 
-	^ researchers
+	^ members select: [ :each | each isResearcher ]
 ]
 
 { #category : #accessing }
 SENSTerrain >> students [
 
-	^ students
+	^ members select: [ :each | each isPhdStudent ]
 ]
 
 { #category : #accessing }

@@ -3,8 +3,7 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'title',
-		'researchers',
-		'students'
+		'members'
 	],
 	#category : #'SENS-Presentation-Model'
 }
@@ -21,9 +20,13 @@ SENSTheme class >> titled: aString [
 SENSTheme >> initialize [
 
 	super initialize.
-	
-	researchers := OrderedCollection new.
-	students := OrderedCollection new.
+	members := OrderedCollection new.
+]
+
+{ #category : #accessing }
+SENSTheme >> members [
+
+	^ members
 ]
 
 { #category : #printing }
@@ -35,13 +38,13 @@ SENSTheme >> printOn: aStream [
 { #category : #accessing }
 SENSTheme >> researchers [
 
-	^ researchers
+	^ members select: [ :each | each isResearcher ]
 ]
 
 { #category : #accessing }
 SENSTheme >> students [
 
-	^ students
+	^ members select: [ :each | each isPhdStudent ]
 ]
 
 { #category : #accessing }
