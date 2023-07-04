@@ -63,14 +63,15 @@ SENSTerrainMap >> processClick: evt [
 { #category : #hooks }
 SENSTerrainMap >> renderIn: aCanvas [
 
-	| color maxMembersOnTerrain |
+	| color minMembersOnTerrain maxMembersOnTerrain |
 	
+	minMembersOnTerrain := (terrains collect: [ :each | each members size ]) min.
 	maxMembersOnTerrain := (terrains collect: [ :each | each members size ]) max.
 
 	terrains do: [ :each |
 		color := SENSColor
 			colorValue: each members size
-			min: 0
+			min: minMembersOnTerrain
 			max: maxMembersOnTerrain
 			baseColor: SENSColor mapColor.
 		

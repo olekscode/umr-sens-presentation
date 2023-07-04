@@ -19,7 +19,7 @@ SENSTerrainPieChart class >> forTerrain: aTerrain [
 { #category : #hooks }
 SENSTerrainPieChart >> renderIn: aCanvas [
 
-	| pie data color pieLabel pieTitle |
+	| pie data color piePercentLabel pieLabel pieTitle |
 	
 	data := {
 		{ 'CIRAD Researchers' . 'CIRAD Researchers' . (terrain ciradResearchers size) } .
@@ -46,15 +46,23 @@ SENSTerrainPieChart >> renderIn: aCanvas [
 		
 	pie sliceColor: color.
 
+	piePercentLabel := RSPieLabeledInteraction new.
+	piePercentLabel labelShape
+		fontSize: 16;
+		fontName: 'Source Code Pro'.
+	piePercentLabel
+		labelText: [ :obj | obj third ];
+		offset: 0.
+		
 	pieLabel := RSPieLabeledInteraction new.
 	pieLabel labelShape
 		fontSize: 16;
 		fontName: 'Source Code Pro'.
 	pieLabel
 		labelColor: color;
-		labelText: [ :obj | (obj third * 100 / pie totalSum) rounded asString, '%' ];
-		rotated;
-		offset: 60.
+		labelText: [ :obj | obj first ];
+		offset: 100.
+		
 	pieTitle := RSPieTitleInteraction new.
 	pieTitle labelShape
 		fontSize: 30.
@@ -64,6 +72,7 @@ SENSTerrainPieChart >> renderIn: aCanvas [
 	pie shapes @ (RSPopup text: [ :obj |
 		obj first capitalized, '. ', obj third asString, ' hrs' ] ).
 	pie shapes @ pieLabel.
+	pie shapes @ piePercentLabel.
 	pie canvas @ pieTitle.
 ]
 

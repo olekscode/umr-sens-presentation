@@ -3,10 +3,23 @@ Class {
 	#superclass : #SENSMember,
 	#instVars : [
 		'projects',
-		'terrains'
+		'terrains',
+		'field'
 	],
 	#category : #'SENS-Presentation-Model'
 }
+
+{ #category : #accessing }
+SENSResearcher >> field [
+
+	^ field
+]
+
+{ #category : #accessing }
+SENSResearcher >> field: anObject [
+
+	field := anObject
+]
 
 { #category : #testing }
 SENSResearcher >> isResearcher [

@@ -6,10 +6,37 @@ Class {
 		'projects',
 		'themes',
 		'institutes',
-		'terrains'
+		'terrains',
+		'fields'
 	],
 	#category : #'SENS-Presentation-Model'
 }
+
+{ #category : #defaults }
+SENSUnit class >> defaultFields [
+
+	^ { 
+		SENSField new
+			shortName: 'SVE';
+			name: 'Sciences du Vivant et de l''Environnement';
+			yourself .
+			
+		SENSField new
+			shortName: 'SHS';
+			name: 'Sciences Humaines et Sociales';
+			yourself .
+			
+		SENSField new
+			shortName: 'ST';
+			name: 'Sciences et Technologies';
+			yourself .
+			
+		SENSField new
+			shortName: 'J';
+			name: '';
+			yourself .
+	}
+]
 
 { #category : #defaults }
 SENSUnit class >> defaultInstitutes [
@@ -100,6 +127,7 @@ SENSUnit >> initialize [
 	projects := self class defaultProjects.
 	themes := self class defaultThemes.
 	terrains := self class defaultTerrains.
+	fields := self class defaultFields.
 	
 	terrains do: [ :each | each researchUnit: self ].
 	
@@ -107,6 +135,20 @@ SENSUnit >> initialize [
 	members := OrderedCollection new.
 	members addAll: self loadMembers.
 	members addAll: self loadPhdStudents.
+]
+
+{ #category : #inspector }
+SENSUnit >> inspectorFields [
+	<inspectorPresentationOrder: 3 title: 'Fields'>
+	
+	| fieldsOfInterest |
+	fieldsOfInterest := fields reject: [ :each | each shortName = 'J' ].
+	^ (SENSFieldsChart forFields: fieldsOfInterest) asPresenter
+]
+
+{ #category : #inspector }
+SENSUnit >> inspectorFieldsContext: aContext [
+	aContext withoutEvaluator
 ]
 
 { #category : #inspector }
@@ -197,10 +239,14 @@ SENSUnit >> loadPhdStudents [
 { #category : #loading }
 SENSUnit >> loadResearcherFromRow: row [
 	
-	| researcher theirTerrains theirInstitute |
+	| researcher theirTerrains theirInstitute theirField |
 	
 	theirInstitute := institutes
 		detect: [ :institute | row at: institute name ]
+		ifNone: [ nil ].
+		
+	theirField := fields
+		detect: [ :field | (row at: 'Field') = field shortName ]
 		ifNone: [ nil ].
 		
 	theirTerrains := terrains select: [ :terrain | row at: terrain name ].
@@ -210,10 +256,12 @@ SENSUnit >> loadResearcherFromRow: row [
 		lastName: (row at: 'Last Name');
 		institute: theirInstitute;
 		terrains: theirTerrains;
+		field: theirField;
 		yourself.
 			
 	theirTerrains do: [ :terrain | terrain members add: researcher ].
 	theirInstitute ifNotNil: [ theirInstitute members add: researcher ].
+	theirField ifNotNil: [ theirField members add: researcher ].
 	
 	^ researcher
 ]
@@ -221,19 +269,25 @@ SENSUnit >> loadResearcherFromRow: row [
 { #category : #loading }
 SENSUnit >> loadStaffMemberFromRow: row [
 
-	| member theirInstitute |
+	| member theirInstitute theirField |
 
 	theirInstitute := institutes
 		detect: [ :institute | row at: institute name ]
+		ifNone: [ nil ].
+		
+	theirField := fields
+		detect: [ :field | (row at: 'Field') = field shortName ]
 		ifNone: [ nil ].
 
 	member := SENSSupportStaff new
 		firstName: (row at: 'First Name');
 		lastName: (row at: 'Last Name');
 		institute: theirInstitute;
+		field: theirField;
 		yourself.
 		
-	theirInstitute members add: member.
+	theirInstitute ifNotNil: [ theirInstitute members add: member ].
+	theirField ifNotNil: [ theirField members add: member ].
 	^ member
 ]
 
