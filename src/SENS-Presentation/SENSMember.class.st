@@ -33,6 +33,24 @@ SENSMember >> institute: anObject [
 	institute := anObject
 ]
 
+{ #category : #testing }
+SENSMember >> isPhdStudent [
+
+	^ false
+]
+
+{ #category : #testing }
+SENSMember >> isResearcher [
+
+	^ false
+]
+
+{ #category : #testing }
+SENSMember >> isSupportStaff [
+
+	^ false
+]
+
 { #category : #accessing }
 SENSMember >> lastName [
 

@@ -6,3 +6,9 @@ Class {
 	],
 	#category : #'SENS-Presentation-Model'
 }
+
+{ #category : #testing }
+SENSResearcher >> isResearcher [
+
+	^ true
+]

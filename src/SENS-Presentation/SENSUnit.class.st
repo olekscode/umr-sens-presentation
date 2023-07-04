@@ -2,9 +2,7 @@ Class {
 	#name : #SENSUnit,
 	#superclass : #Object,
 	#instVars : [
-		'researchers',
-		'students',
-		'supportStaff',
+		'members',
 		'projects',
 		'themes',
 		'institutes',
@@ -84,6 +82,35 @@ SENSUnit class >> defaultThemes [
 	} collect: [ :each | SENSTheme titled: each ].
 ]
 
+{ #category : #defaults }
+SENSUnit class >> loadMembers [
+
+	| file df supportStaffCondition supportStaff researchers |
+	file := SENSGitBridge dataPath / 'members.csv'.
+	df := DataFrame readFromCsv: file.
+	
+	supportStaffCondition := [ :row |
+		((row at: 'Field') = 'J') or: [
+			(row at: 'Grade') isNotNil and: [
+				(row at: 'Grade') beginsWith: 'NonCadre' ] ] ].
+	
+	supportStaff := (df select: supportStaffCondition) rows collect: [ :row |
+		SENSSupportStaff new
+			firstName: (row at: 'First Name');
+			lastName: (row at: 'Last Name');
+			institute: (#(CIRAD IRD UPVM) detect: [ :each | row at: each ] ifNone: [ nil ]);
+			yourself ].
+		
+	researchers := (df reject: supportStaffCondition) rows collect: [ :row |
+		SENSResearcher new
+			firstName: (row at: 'First Name');
+			lastName: (row at: 'Last Name');
+			institute: (#(CIRAD IRD UPVM) detect: [ :each | row at: each ] ifNone: [ nil ]);
+			yourself ].
+		
+	^ supportStaff, researchers
+]
+
 { #category : #'as yet unclassified' }
 SENSUnit class >> openWorldMap [
 	<script>
@@ -102,10 +129,7 @@ SENSUnit >> initialize [
 	projects := self class defaultProjects.
 	themes := self class defaultThemes.
 	terrains := self class defaultTerrains.
-	
-	supportStaff := OrderedCollection new.
-	researchers := OrderedCollection new.
-	students := OrderedCollection new.
+	members := self class loadMembers.
 ]
 
 { #category : #inspector }
@@ -137,6 +161,12 @@ SENSUnit >> institutes [
 ]
 
 { #category : #accessing }
+SENSUnit >> members [
+
+	^ members
+]
+
+{ #category : #accessing }
 SENSUnit >> projects [
 
 	^ projects
@@ -145,19 +175,25 @@ SENSUnit >> projects [
 { #category : #accessing }
 SENSUnit >> researchers [
 
-	^ researchers
+	^ members select: [ :each | each isResearcher ]
 ]
 
 { #category : #accessing }
 SENSUnit >> students [
 
-	^ students
+	^ members select: [ :each | each isPhdStudent ]
 ]
 
 { #category : #accessing }
 SENSUnit >> supportStaff [
 
-	^ supportStaff
+	^ members select: [ :each | each isSupportStaff ]
+]
+
+{ #category : #accessing }
+SENSUnit >> terrains [
+
+	^ terrains
 ]
 
 { #category : #accessing }
