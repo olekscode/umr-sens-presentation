@@ -63,10 +63,18 @@ SENSTerrainMap >> processClick: evt [
 { #category : #hooks }
 SENSTerrainMap >> renderIn: aCanvas [
 
+	| color |
+
 	self terrains do: [ :each |
+		color := SENSColor
+			colorValue: each members size
+			min: 0
+			max: each researchUnit members size
+			baseColor: Color green.
+		
 		self
 			displayTerrain: each
-			withColor: Color random
+			withColor: color
 			onCanvas: aCanvas ].
 	
 	self

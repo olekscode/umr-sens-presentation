@@ -4,7 +4,8 @@ Class {
 	#instVars : [
 		'name',
 		'svgPath',
-		'members'
+		'members',
+		'researchUnit'
 	],
 	#category : #'SENS-Presentation-Model'
 }
@@ -46,6 +47,18 @@ SENSTerrain >> name: anObject [
 SENSTerrain >> printOn: aStream [
 
 	aStream nextPutAll: name
+]
+
+{ #category : #accessing }
+SENSTerrain >> researchUnit [
+
+	^ researchUnit
+]
+
+{ #category : #accessing }
+SENSTerrain >> researchUnit: anObject [
+
+	researchUnit := anObject
 ]
 
 { #category : #accessing }

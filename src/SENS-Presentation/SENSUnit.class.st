@@ -101,6 +101,8 @@ SENSUnit >> initialize [
 	themes := self class defaultThemes.
 	terrains := self class defaultTerrains.
 	
+	terrains do: [ :each | each researchUnit: self ].
+	
 	"This must appear after projects, terrains, etc. are loaded"
 	members := self loadMembers.
 ]
