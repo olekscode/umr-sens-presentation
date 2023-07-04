@@ -1,22 +1,18 @@
 Class {
 	#name : #WorldMap,
 	#superclass : #RSAbstractContainerBuilder,
+	#instVars : [
+		'terrains'
+	],
 	#category : #'SENS-Presentation-Countries SVG'
 }
 
-{ #category : #'instance creation' }
-WorldMap class >> open [
-	<script>
-	self new open
-]
+{ #category : #'as yet unclassified' }
+WorldMap class >> forTerrains: aCollection [
 
-{ #category : #'instance creation' }
-WorldMap class >> openInspector [
-	<script>
-	| b |
-	b := self new.
-	b build.
-	b canvas inspect
+	^ self new
+		terrains: aCollection;
+		yourself
 ]
 
 { #category : #'accessing - defaults' }
@@ -30,29 +26,28 @@ WorldMap >> defaultContainer [
 ]
 
 { #category : #'as yet unclassified' }
-WorldMap >> displayClickableRegion: aPath withColor: aColor onCanvas: aCanvas [
+WorldMap >> displayDefaultRegion: aPath withColor: aColor onCanvas: aCanvas [
 
 	| country |
 	
 	country := RSSVGPath new.
 	country svgPath: aPath.
-	country model: aPath.
 	country border: (RSBorder new width: 0.5; color: Color black).
-	country when: RSMouseClick send: #processClick: to: self.
 	country color: aColor.
 	
 	aCanvas add: country
 ]
 
 { #category : #'as yet unclassified' }
-WorldMap >> displayNonClickableRegion: aPath withColor: aColor onCanvas: aCanvas [
+WorldMap >> displayTerrain: aTerrain withColor: aColor onCanvas: aCanvas [
 
 	| country |
 	
 	country := RSSVGPath new.
-	country svgPath: aPath.
-	country model: aPath.
+	country svgPath: aTerrain svgPath.
+	country model: aTerrain.
 	country border: (RSBorder new width: 0.5; color: Color black).
+	country when: RSMouseClick send: #processClick: to: self.
 	country color: aColor.
 	
 	aCanvas add: country
@@ -70,28 +65,24 @@ WorldMap >> renderIn: aCanvas [
 
 	self terrains do: [ :each |
 		self
-			displayClickableRegion: each
+			displayTerrain: each
 			withColor: Color random
 			onCanvas: aCanvas ].
 	
 	self
-		displayNonClickableRegion: CountrySVG nonCoveredRegions
+		displayDefaultRegion: CountrySVG nonCoveredRegions
 		withColor: Color gray
 		onCanvas: aCanvas.
 ]
 
 { #category : #'as yet unclassified' }
 WorldMap >> terrains [
-
-	"^ CountrySVG class definedSelectors collect: [ :each | CountrySVG perform: each ]."
 	
-	^ {
-		CountrySVG subSaharanAfrica .
-		CountrySVG latinAmerica .
-		CountrySVG maghreb .
-		CountrySVG europe .
-		CountrySVG southEastAsia .
-		CountrySVG pacific .
-		CountrySVG madagascarAndIndianOcean
-	}
+	^ terrains
+]
+
+{ #category : #accessing }
+WorldMap >> terrains: anObject [
+
+	terrains := anObject
 ]

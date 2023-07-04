@@ -36,14 +36,41 @@ SENSUnit class >> defaultProjects [
 SENSUnit class >> defaultTerrains [
 
 	^ { 
-		'Africa' .
-		'Latin America' .
-		'South-East Asia' .
-		'Madagascar and Indian Ocean' .
-		'Pacific' .
-		'France/Europe' .
-		'Maghreb'
-	} collect: [ :each | SENSTerrain named: each ].
+		SENSTerrain new
+			name: 'Africa';
+			svgPath: CountrySVG subSaharanAfrica;
+			yourself .
+			
+		SENSTerrain new
+			name: 'Latin America';
+			svgPath: CountrySVG latinAmerica;
+			yourself .
+			
+		SENSTerrain new
+			name: 'South-East Asia';
+			svgPath: CountrySVG southEastAsia;
+			yourself .
+			
+		SENSTerrain new
+			name: 'Madagascar and Indian Ocean';
+			svgPath: CountrySVG madagascarAndIndianOcean;
+			yourself .
+			
+		SENSTerrain new
+			name: 'Pacific';
+			svgPath: CountrySVG pacific;
+			yourself .
+			
+		SENSTerrain new
+			name: 'France/Europe';
+			svgPath: CountrySVG europe;
+			yourself .
+			
+		SENSTerrain new
+			name: 'Maghreb';
+			svgPath: CountrySVG maghreb;
+			yourself
+	}
 ]
 
 { #category : #defaults }
@@ -55,6 +82,15 @@ SENSUnit class >> defaultThemes [
 		'Gouvernance de la natureet des ressources' .
 		'Construction et usages des savoirs sur l’environnement'
 	} collect: [ :each | SENSTheme titled: each ].
+]
+
+{ #category : #'as yet unclassified' }
+SENSUnit class >> openWorldMap [
+	<script>
+	
+	| terrains |
+	terrains := self defaultTerrains.
+	(WorldMap forTerrains: terrains) open
 ]
 
 { #category : #initialization }

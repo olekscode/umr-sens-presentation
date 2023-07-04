@@ -3,6 +3,7 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'name',
+		'svgPath',
 		'researchers',
 		'students'
 	],
@@ -54,4 +55,16 @@ SENSTerrain >> researchers [
 SENSTerrain >> students [
 
 	^ students
+]
+
+{ #category : #accessing }
+SENSTerrain >> svgPath [
+
+	^ svgPath
+]
+
+{ #category : #accessing }
+SENSTerrain >> svgPath: anObject [
+
+	svgPath := anObject
 ]
