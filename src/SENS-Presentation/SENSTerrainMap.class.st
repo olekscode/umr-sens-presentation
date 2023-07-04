@@ -1,14 +1,14 @@
 Class {
-	#name : #WorldMap,
+	#name : #SENSTerrainMap,
 	#superclass : #RSAbstractContainerBuilder,
 	#instVars : [
 		'terrains'
 	],
-	#category : #'SENS-Presentation-Countries SVG'
+	#category : #'SENS-Presentation-Roassal Visualizations'
 }
 
 { #category : #'as yet unclassified' }
-WorldMap class >> forTerrains: aCollection [
+SENSTerrainMap class >> forTerrains: aCollection [
 
 	^ self new
 		terrains: aCollection;
@@ -16,7 +16,7 @@ WorldMap class >> forTerrains: aCollection [
 ]
 
 { #category : #'accessing - defaults' }
-WorldMap >> defaultContainer [
+SENSTerrainMap >> defaultContainer [
 	| controller canvas |
 	controller := RSCanvasController new.
 	controller configuration maxScale: 100.
@@ -26,7 +26,7 @@ WorldMap >> defaultContainer [
 ]
 
 { #category : #'as yet unclassified' }
-WorldMap >> displayDefaultRegion: aPath withColor: aColor onCanvas: aCanvas [
+SENSTerrainMap >> displayDefaultRegion: aPath withColor: aColor onCanvas: aCanvas [
 
 	| country |
 	
@@ -39,7 +39,7 @@ WorldMap >> displayDefaultRegion: aPath withColor: aColor onCanvas: aCanvas [
 ]
 
 { #category : #'as yet unclassified' }
-WorldMap >> displayTerrain: aTerrain withColor: aColor onCanvas: aCanvas [
+SENSTerrainMap >> displayTerrain: aTerrain withColor: aColor onCanvas: aCanvas [
 
 	| country |
 	
@@ -54,14 +54,14 @@ WorldMap >> displayTerrain: aTerrain withColor: aColor onCanvas: aCanvas [
 ]
 
 { #category : #'as yet unclassified' }
-WorldMap >> processClick: evt [
+SENSTerrainMap >> processClick: evt [
 	| shape |
 	shape := evt shape.
 	shape model inspect.
 ]
 
 { #category : #hooks }
-WorldMap >> renderIn: aCanvas [
+SENSTerrainMap >> renderIn: aCanvas [
 
 	self terrains do: [ :each |
 		self
@@ -76,13 +76,13 @@ WorldMap >> renderIn: aCanvas [
 ]
 
 { #category : #'as yet unclassified' }
-WorldMap >> terrains [
+SENSTerrainMap >> terrains [
 	
 	^ terrains
 ]
 
 { #category : #accessing }
-WorldMap >> terrains: anObject [
+SENSTerrainMap >> terrains: anObject [
 
 	terrains := anObject
 ]

@@ -90,7 +90,7 @@ SENSUnit class >> openWorldMap [
 	
 	| terrains |
 	terrains := self defaultTerrains.
-	(WorldMap forTerrains: terrains) open
+	(SENSTerrainMap forTerrains: terrains) open
 ]
 
 { #category : #initialization }
@@ -106,6 +106,28 @@ SENSUnit >> initialize [
 	supportStaff := OrderedCollection new.
 	researchers := OrderedCollection new.
 	students := OrderedCollection new.
+]
+
+{ #category : #inspector }
+SENSUnit >> inspectorTerrainsMap [
+	<inspectorPresentationOrder: 1 title: 'Terrains Map'>
+	^ (SENSTerrainMap forTerrains: terrains) asPresenter
+]
+
+{ #category : #inspector }
+SENSUnit >> inspectorTerrainsMapContext: aContext [
+	aContext withoutEvaluator
+]
+
+{ #category : #inspector }
+SENSUnit >> inspectorThemes [
+	<inspectorPresentationOrder: 2 title: 'Themes'>
+	^ (SENSThemesChart forThemes: themes) asPresenter
+]
+
+{ #category : #inspector }
+SENSUnit >> inspectorThemesContext: aContext [
+	aContext withoutEvaluator
 ]
 
 { #category : #accessing }
