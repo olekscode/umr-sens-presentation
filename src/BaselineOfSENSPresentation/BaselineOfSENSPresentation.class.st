@@ -19,7 +19,7 @@ BaselineOfSENSPresentation >> baseline: spec [
 BaselineOfSENSPresentation >> loadBackgroundImage [
 	"Load UMR SENS logo as background image"
 
-	(SENSGitBridge imagesPath / 'sens-logo.png') ifExists: [ :file |
+	(SENSGitBridge imagesPath / 'CormasLogoFull.png') ifExists: [ :file |
 		PolymorphSystemSettings desktopLogoFileName: file fullName ].
 ]
 
