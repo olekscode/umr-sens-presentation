@@ -1,59 +1,55 @@
 Class {
-	#name : #Member,
+	#name : #SENSMember,
 	#superclass : #Object,
 	#instVars : [
 		'firstName',
 		'lastName',
-		'email',
 		'institute'
 	],
-	#category : #'SENS-Presentation'
+	#category : #'SENS-Presentation-Model'
 }
 
 { #category : #accessing }
-Member >> email [
-
-	^ email
-]
-
-{ #category : #accessing }
-Member >> email: anObject [
-
-	email := anObject
-]
-
-{ #category : #accessing }
-Member >> firstName [
+SENSMember >> firstName [
 
 	^ firstName
 ]
 
 { #category : #accessing }
-Member >> firstName: anObject [
+SENSMember >> firstName: anObject [
 
 	firstName := anObject
 ]
 
 { #category : #accessing }
-Member >> institute [
+SENSMember >> institute [
 
 	^ institute
 ]
 
 { #category : #accessing }
-Member >> institute: anObject [
+SENSMember >> institute: anObject [
 
 	institute := anObject
 ]
 
 { #category : #accessing }
-Member >> lastName [
+SENSMember >> lastName [
 
 	^ lastName
 ]
 
 { #category : #accessing }
-Member >> lastName: anObject [
+SENSMember >> lastName: anObject [
 
 	lastName := anObject
+]
+
+{ #category : #printing }
+SENSMember >> printOn: aStream [
+
+	aStream
+		nextPutAll: firstName;
+		space;
+		nextPutAll: lastName.
 ]
