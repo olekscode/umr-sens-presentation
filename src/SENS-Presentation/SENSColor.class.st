@@ -4,7 +4,19 @@ Class {
 	#category : #'SENS-Presentation-Roassal Visualizations'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'named colors' }
+SENSColor class >> blue [
+
+	^ Color fromHexString: '4c9196'
+]
+
+{ #category : #'domain colors' }
+SENSColor class >> ciradResearcherColor [
+	
+	^ self green
+]
+
+{ #category : #utilities }
 SENSColor class >> colorValue: aValue min: minValue max: maxValue baseColor: baseColor [
 	
 	| lightColor darkColor alpha |
@@ -26,26 +38,86 @@ SENSColor class >> colorValue: aValue min: minValue max: maxValue baseColor: bas
 		b: baseColor blue * alpha"
 ]
 
-{ #category : #'accessing - defaults' }
+{ #category : #'named colors' }
 SENSColor class >> darkGreen [
 
 	^ Color fromHexString: '597244'
 ]
 
-{ #category : #'accessing - defaults' }
+{ #category : #'named colors' }
 SENSColor class >> green [
 
 	^ Color fromHexString: '1da22d'
 ]
 
-{ #category : #'accessing - defaults' }
+{ #category : #'domain colors' }
+SENSColor class >> inactiveGrayColor [
+	
+	^ self lightGray
+]
+
+{ #category : #'domain colors' }
+SENSColor class >> irdResearcherColor [
+	
+	^ self lightGreen
+]
+
+{ #category : #'named colors' }
+SENSColor class >> lightBlue [
+
+	^ Color fromHexString: '9abfcf'
+]
+
+{ #category : #'named colors' }
+SENSColor class >> lightGray [
+
+	^ Color fromHexString: 'dee2df'
+]
+
+{ #category : #'named colors' }
 SENSColor class >> lightGreen [
 
 	^ Color fromHexString: '98be2a'
 ]
 
-{ #category : #'accessing - defaults' }
+{ #category : #'domain colors' }
+SENSColor class >> mapColor [
+	
+	^ self green
+]
+
+{ #category : #'named colors' }
+SENSColor class >> marine [
+
+	^ Color fromHexString: 'a3ccbe'
+]
+
+{ #category : #'named colors' }
+SENSColor class >> orange [
+
+	^ Color fromHexString: 'ec944f'
+]
+
+{ #category : #'domain colors' }
+SENSColor class >> phdStudentColor [
+	
+	^ self pink
+]
+
+{ #category : #'named colors' }
 SENSColor class >> pink [
 
 	^ Color fromHexString: 'd90375'
+]
+
+{ #category : #'domain colors' }
+SENSColor class >> upvmResearcherColor [
+	
+	^ self darkGreen
+]
+
+{ #category : #'named colors' }
+SENSColor class >> yellow [
+
+	^ Color fromHexString: 'f2d34b'
 ]

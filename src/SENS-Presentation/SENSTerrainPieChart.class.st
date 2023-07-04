@@ -29,10 +29,10 @@ SENSTerrainPieChart >> renderIn: aCanvas [
 	}.
 		
 	color := NSScale ordinal rangeFrom: { 
-		SENSColor green asHexString .
-		SENSColor lightGreen asHexString .
-		SENSColor darkGreen asHexString .
-		SENSColor pink asHexString }.
+		SENSColor ciradResearcherColor asHexString .
+		SENSColor irdResearcherColor asHexString .
+		SENSColor upvmResearcherColor asHexString .
+		SENSColor phdStudentColor asHexString }.
 		
 	pie := RSPie new
 		container: aCanvas;

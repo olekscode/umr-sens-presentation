@@ -72,7 +72,7 @@ SENSTerrainMap >> renderIn: aCanvas [
 			colorValue: each members size
 			min: 0
 			max: maxMembersOnTerrain
-			baseColor: SENSColor pink.
+			baseColor: SENSColor mapColor.
 		
 		self
 			displayTerrain: each
@@ -81,7 +81,7 @@ SENSTerrainMap >> renderIn: aCanvas [
 	
 	self
 		displayDefaultRegion: CountrySVG nonCoveredRegions
-		withColor: Color lightGray
+		withColor: SENSColor inactiveGrayColor
 		onCanvas: aCanvas.
 ]
 
