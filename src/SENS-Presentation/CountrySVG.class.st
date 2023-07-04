@@ -806,6 +806,8 @@ CountrySVG class >> nigeria [
 CountrySVG class >> nonCoveredRegions [
 
 	^ { 
+		self australia .
+		self newZealand .
 		self unitedStates .
 		self canada .
 		self northAsia .
@@ -860,8 +862,6 @@ CountrySVG class >> oman [
 CountrySVG class >> pacific [
 
 	^ {
-		self australia .
-		self newZealand .
 		self solomonIslands .
 		self papuaNewGuinea
 	} inject: '' into: [ :sum :each | sum, ' ', each ]

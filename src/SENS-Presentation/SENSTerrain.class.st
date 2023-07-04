@@ -32,6 +32,17 @@ SENSTerrain >> initialize [
 	members := OrderedCollection new.
 ]
 
+{ #category : #inspector }
+SENSTerrain >> inspectorMembersDistribution [
+	<inspectorPresentationOrder: 1 title: 'Members Distribution'>
+	^ (SENSTerrainPieChart forTerrain: self) asPresenter
+]
+
+{ #category : #inspector }
+SENSTerrain >> inspectorMembersDistributionContext: aContext [
+	aContext withoutEvaluator
+]
+
 { #category : #accessing }
 SENSTerrain >> irdResearchers [
 

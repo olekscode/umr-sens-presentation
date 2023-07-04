@@ -21,7 +21,7 @@ SENSTerrainMap >> defaultContainer [
 	controller := RSCanvasController new.
 	controller configuration maxScale: 100.
 	canvas := RSCanvas new.
-	canvas inspectorContext: RSEmptyContextInteraction new.
+	"canvas inspectorContext: RSEmptyContextInteraction new."
 	^ canvas @ controller
 ]
 
@@ -47,7 +47,7 @@ SENSTerrainMap >> displayTerrain: aTerrain withColor: aColor onCanvas: aCanvas [
 	country svgPath: aTerrain svgPath.
 	country model: aTerrain.
 	country border: (RSBorder new width: 0.5; color: Color black).
-	country when: RSMouseClick send: #processClick: to: self.
+	"country when: RSMouseClick send: #processClick: to: self."
 	country color: aColor.
 	
 	aCanvas add: country
@@ -63,14 +63,16 @@ SENSTerrainMap >> processClick: evt [
 { #category : #hooks }
 SENSTerrainMap >> renderIn: aCanvas [
 
-	| color |
+	| color maxMembersOnTerrain |
+	
+	maxMembersOnTerrain := (terrains collect: [ :each | each members size ]) max.
 
-	self terrains do: [ :each |
+	terrains do: [ :each |
 		color := SENSColor
 			colorValue: each members size
 			min: 0
-			max: each researchUnit members size
-			baseColor: Color green.
+			max: maxMembersOnTerrain
+			baseColor: SENSColor pink.
 		
 		self
 			displayTerrain: each
@@ -79,7 +81,7 @@ SENSTerrainMap >> renderIn: aCanvas [
 	
 	self
 		displayDefaultRegion: CountrySVG nonCoveredRegions
-		withColor: Color gray
+		withColor: Color lightGray
 		onCanvas: aCanvas.
 ]
 
