@@ -138,22 +138,8 @@ SENSUnit >> initialize [
 ]
 
 { #category : #inspector }
-SENSUnit >> inspectorFields [
-	<inspectorPresentationOrder: 3 title: 'Fields'>
-	
-	| fieldsOfInterest |
-	fieldsOfInterest := fields reject: [ :each | each shortName = 'J' ].
-	^ (SENSFieldsChart forFields: fieldsOfInterest) asPresenter
-]
-
-{ #category : #inspector }
-SENSUnit >> inspectorFieldsContext: aContext [
-	aContext withoutEvaluator
-]
-
-{ #category : #inspector }
 SENSUnit >> inspectorTerrainsMap [
-	<inspectorPresentationOrder: 1 title: 'Terrains Map'>
+	<inspectorPresentationOrder: 2 title: 'Terrains Map'>
 	^ (SENSTerrainMap forTerrains: terrains) asPresenter
 ]
 
@@ -164,7 +150,7 @@ SENSUnit >> inspectorTerrainsMapContext: aContext [
 
 { #category : #inspector }
 SENSUnit >> inspectorThemes [
-	<inspectorPresentationOrder: 2 title: 'Themes'>
+	<inspectorPresentationOrder: 1 title: 'Themes'>
 	^ (SENSThemesChart forThemes: themes) asPresenter
 ]
 
