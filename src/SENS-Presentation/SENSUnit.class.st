@@ -63,7 +63,7 @@ SENSUnit class >> defaultTerrains [
 	^ { 
 		SENSTerrain new
 			name: 'Africa';
-			svgPath: CountrySVG subSaharanAfrica;
+			svgPath: CountrySVG africa;
 			yourself .
 			
 		SENSTerrain new
@@ -76,10 +76,10 @@ SENSUnit class >> defaultTerrains [
 			svgPath: CountrySVG southEastAsia;
 			yourself .
 			
-		SENSTerrain new
+		"SENSTerrain new
 			name: 'Madagascar and Indian Ocean';
 			svgPath: CountrySVG madagascarAndIndianOcean;
-			yourself .
+			yourself ."
 			
 		SENSTerrain new
 			name: 'Pacific';
@@ -91,10 +91,10 @@ SENSUnit class >> defaultTerrains [
 			svgPath: CountrySVG europe;
 			yourself .
 			
-		SENSTerrain new
+		"SENSTerrain new
 			name: 'Maghreb';
 			svgPath: CountrySVG maghreb;
-			yourself
+			yourself"
 	}
 ]
 
@@ -196,6 +196,11 @@ SENSUnit >> loadMembers [
 	file := SENSGitBridge dataPath / 'members.csv'.
 	df := DataFrame readFromCsv: file.
 	
+	"Joining Africas"
+	df column: 'Africa' put: ((df columns: #('Africa' 'Madagascar and Indian Ocean' 'Maghreb')) rows collect: [ :row | row anySatisfy: [ :each | each ] ]).
+	
+	df removeColumns: #('Madagascar and Indian Ocean' 'Maghreb').
+	
 	^ df rows collect: [ :row |
 		(self isSupportStaffInData: row)
 			ifTrue: [ self loadStaffMemberFromRow: row ]
@@ -232,6 +237,11 @@ SENSUnit >> loadPhdStudents [
 	| file df |
 	file := SENSGitBridge dataPath / 'phd.csv'.
 	df := DataFrame readFromCsv: file.
+	
+	"Joining Africas"
+	df column: 'Africa' put: ((df columns: #('Africa' 'Madagascar and Indian Ocean' 'Maghreb')) rows collect: [ :row | row anySatisfy: [ :each | each ] ]).
+	
+	df removeColumns: #('Madagascar and Indian Ocean' 'Maghreb').
 	
 	^ df rows collect: [ :row | self loadPhdStudentFromRow: row ]
 ]
