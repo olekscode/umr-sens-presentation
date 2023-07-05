@@ -22,7 +22,7 @@ SENSColor class >> colorValue: aValue min: minValue max: maxValue baseColor: bas
 	| lightColor darkColor alpha |
 	alpha := (aValue - minValue) / (maxValue - minValue).
 	
-	lightColor := baseColor alphaMixed: 0.1 with: Color white.
+	lightColor := baseColor alphaMixed: 0.3 with: Color white.
 	"darkColor := baseColor alphaMixed: 0.4 with: Color black."
 	
 	"lightColor := Color white."
