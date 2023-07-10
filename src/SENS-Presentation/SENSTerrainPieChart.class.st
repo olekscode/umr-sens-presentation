@@ -16,6 +16,12 @@ SENSTerrainPieChart class >> forTerrain: aTerrain [
 		yourself
 ]
 
+{ #category : #'accessing - defaults' }
+SENSTerrainPieChart >> defaultContainer [
+
+	^ RSCanvas new @ RSCanvasController
+]
+
 { #category : #hooks }
 SENSTerrainPieChart >> renderIn: aCanvas [
 
